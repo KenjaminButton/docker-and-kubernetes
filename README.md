@@ -37,7 +37,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application files
-COPY . .
+COPY . /app
 
 # Expose the port on which the app will run
 EXPOSE 80
@@ -67,7 +67,7 @@ docker ps
 docker stop NAMES
  ```
 
-- If docker container is stopped, you can check containers with the following command:
+- If docker container is stopped, you can check containers with the following command: NOTE: ps => process status and -a => all
 
 ```shell
 docker ps -a
@@ -78,3 +78,8 @@ docker ps -a
 docker run -p 3000:80 sha256:####
 ```
 
+- If changes are made in the code, we will need to rebuild the image to pick up external changes. Basically, an image is a closed template (READ ONLY). 
+
+```shell
+docker build .
+```

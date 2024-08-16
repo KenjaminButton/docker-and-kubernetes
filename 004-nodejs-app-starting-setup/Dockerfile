@@ -8,10 +8,11 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application files
-COPY . .
+COPY . /app
 
 # Expose the port on which the app will run
 EXPOSE 80
 
 # Run the application
 CMD ["node", "server.js"]
+

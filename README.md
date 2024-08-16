@@ -61,3 +61,20 @@ docker run sha256:####
  ```shell
 docker ps
  ```
+
+ - Stop docker containers by name (it will take a while, be patient)
+ ```shell
+docker stop NAMES
+ ```
+
+- If docker container is stopped, you can check containers with the following command:
+
+```shell
+docker ps -a
+```
+
+- TO run port, you have to PUBLISH with the -p flag (80 is the chosen Dockerfile EXPOSE value)
+```shell
+docker run -p 3000:80 sha256:####
+```
+

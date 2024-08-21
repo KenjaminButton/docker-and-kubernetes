@@ -83,3 +83,51 @@ docker run -p 3000:80 sha256:####
 ```shell
 docker build .
 ```
+
+- [x] Conceptualize and understand what attached vs detached containers are.
+
+- Run a check on docker hub to see if an image of python etc. is available.
+
+##### Python Docker File
+```dockerfile
+FROM python
+
+WORKDIR /app
+
+COPY . /app/
+
+CMD ["python", "rng.py"]
+```
+
+- docker run sha256:#### will give an EOFError because user cannot make inputs.
+
+- -i => interactive 
+- -t => teletype tty
+
+```shell
+docker run -it sha256:####
+
+docker start -a -i NAMEOFCONTAINER
+```
+
+Docker remove images simultaneously after container is stopped
+
+```shell
+docker run -p 3000:80 -d --rm IMAGEID
+```
+
+```shell
+dockerk image inspect IMAGEID
+```
+
+How to specify a tag. -t option
+
+```shell
+docker build -t goals:latest .
+docker build -t goals:1 .
+docker build -t goals:2 .
+
+docker run -p 3000:80  -d --rm --name goalsapp goals:latest
+docker stop goalsapp
+```
+

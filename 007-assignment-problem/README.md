@@ -1,5 +1,3 @@
-# Docker & Kubernetes: The Practical Guide [2024 Edition]
-
 ## 1) Create appropriate images for both apps (two separate images!).
 
 HINT: Have a brief look at the app code to configure your images correctly!
